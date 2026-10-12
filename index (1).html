@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d25">
+  <title>For Egypt ♡</title>
+  <meta name="description" content="A little something written under the stars, just for Egypt.">
+  <style>
+    :root {
+      --night: #080d25;
+      --deep: #10183b;
+      --blue: #1b2a58;
+      --lavender: #c8c8ff;
+      --pink: #ffb9d5;
+      --white: #f7f5ff;
+      --muted: #b8bfdc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; overflow-x: hidden;
+      color: var(--white); font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(ellipse at 20% 15%, rgba(66, 91, 170, .28), transparent 36%),
+        radial-gradient(ellipse at 85% 65%, rgba(113, 69, 148, .18), transparent 34%),
+        linear-gradient(160deg, #080d25 0%, #10183b 54%, #090d24 100%);
+    }
+    #stars, #shooting-stars { position: fixed; inset: 0; pointer-events: none; }
+    #stars { z-index: 0; }
+    #shooting-stars { z-index: 0; overflow: hidden; }
+    .star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff; opacity: .55; animation: twinkle 3s infinite ease-in-out; }
+    @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: .95; transform: scale(1.35); } }
+    .shooting { position: absolute; width: 110px; height: 1px; background: linear-gradient(90deg, #fff, transparent); transform: rotate(-32deg); opacity: 0; animation: shoot 7s linear infinite; }
+    @keyframes shoot { 0% { transform: translate(0,0) rotate(-32deg); opacity: 0; } 5% { opacity: .9; } 17% { transform: translate(-240px,150px) rotate(-32deg); opacity: 0; } 100% { opacity: 0; } }
+    main { position: relative; z-index: 1; width: min(720px, 100%); margin: auto; padding: 32px 20px 54px; }
+    .topline { text-align: center; color: var(--lavender); text-transform: uppercase; letter-spacing: .22em; font: 11px/1.7 Arial, sans-serif; }
+    .moon { text-align: center; font-size: 46px; margin: 28px 0 8px; filter: drop-shadow(0 0 20px #c8c8ff80); }
+    h1 { font-size: clamp(42px, 10vw, 70px); font-weight: 400; letter-spacing: -.04em; text-align: center; margin: 0; }
+    h1 span { color: var(--pink); font-style: italic; }
+    .subtitle { text-align: center; color: var(--muted); font: 13px/1.8 Arial, sans-serif; margin: 15px auto 28px; }
+    .letter {
+      border: 1px solid #c8c8ff35; border-radius: 22px; padding: clamp(22px, 6vw, 42px);
+      background: linear-gradient(145deg, #172044c9, #10152edb);
+      box-shadow: 0 20px 70px #00000035, inset 0 1px #ffffff0c;
+      backdrop-filter: blur(8px);
+    }
+    .letter-label { color: var(--pink); font: 11px Arial, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    #typed { min-height: 130px; white-space: pre-wrap; font-size: clamp(18px, 4vw, 22px); line-height: 1.9; color: #f7f5ff; margin: 20px 0 22px; }
+    .cursor { display: inline-block; width: 2px; height: 1em; background: var(--pink); margin-left: 3px; vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+    @keyframes blink { to { visibility: hidden; } }
+    .hint { font: 12px/1.7 Arial, sans-serif; color: var(--muted); }
+    .song { margin-top: 26px; padding: 22px; border-radius: 18px; border: 1px solid #ffffff18; background: #080d256e; }
+    .song h2 { font-size: 22px; font-weight: 400; margin: 0 0 8px; }
+    .song p { font: 13px/1.7 Arial, sans-serif; color: var(--muted); margin: 0 0 16px; }
+    .spotify { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; padding: 14px 18px; border-radius: 999px; color: #06150b; background: #1ed760; text-decoration: none; font: bold 14px Arial, sans-serif; transition: transform .2s, filter .2s; }
+    .spotify:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .embed { margin-top: 16px; overflow: hidden; border-radius: 12px; }
+    iframe { display: block; width: 100%; height: 352px; border: 0; }
+    footer { text-align: center; color: #a9b1d3; font: 11px/1.8 Arial, sans-serif; letter-spacing: .08em; margin-top: 30px; }
+    .heart { color: var(--pink); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
+  <div id="shooting-stars" aria-hidden="true"><i class="shooting" style="top:17%;left:90%;animation-delay:1s"></i><i class="shooting" style="top:42%;left:80%;animation-delay:4.5s"></i></div>
+  <main>
+    <div class="topline">a little note beneath the stars</div>
+    <div class="moon" aria-hidden="true">☾ ✦</div>
+    <h1>For <span>Egypt</span></h1>
+    <p class="subtitle">Some things are easier to write under a sky full of stars. ♡</p>
+
+    <section class="letter" aria-label="A little letter">
+      <div class="letter-label">✧ a little something for you ✧</div>
+      <div id="typed" aria-live="polite"></div><span class="cursor" id="cursor" aria-hidden="true"></span>
+      <p class="hint">No rush. Take your time. This little corner of the universe is yours.</p>
+    </section>
+
+    <section class="song" aria-label="A playlist for you">
+      <h2>And here's a little soundtrack… ♫</h2>
+      <p>For the moments when words aren't quite enough. You can listen here or open the playlist on Spotify.</p>
+      <a class="spotify" href="https://open.spotify.com/playlist/26I0RoNyqtGnfzeBMUPOLg?si=C3iTuVWYTHuFrBzo2xepNQ&amp;utm_source=copy-link" target="_blank" rel="noopener noreferrer">♫ Open the playlist on Spotify</a>
+      <div class="embed">
+        <iframe title="Spotify playlist" src="https://open.spotify.com/embed/playlist/26I0RoNyqtGnfzeBMUPOLg?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+    <footer>made with a little courage <span class="heart">♡</span> and a lot of stardust</footer>
+  </main>
+  <script>
+    // Tiny twinkling stars, generated locally—no extra libraries needed.
+    const sky = document.getElementById('stars');
+    for (let i = 0; i < 105; i++) {
+      const star = document.createElement('i');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = (Math.random() * 4) + 's';
+      star.style.opacity = (0.2 + Math.random() * 0.65).toFixed(2);
+      const size = (Math.random() * 2 + 1) + 'px';
+      star.style.width = size; star.style.height = size;
+      sky.appendChild(star);
+    }
+
+    // The confession is intentionally blank for now. Edit this text when you're ready.
+    const confession = "";
+    const target = document.getElementById('typed');
+    const cursor = document.getElementById('cursor');
+    if (confession.trim()) {
+      let index = 0;
+      function typeNext() {
+        if (index < confession.length) {
+          target.textContent += confession.charAt(index++);
+          setTimeout(typeNext, confession[index - 1] === '\n' ? 360 : 48);
+        } else {
+          cursor.style.display = 'none';
+        }
+      }
+      setTimeout(typeNext, 900);
+    } else {
+      target.textContent = "Your words will appear here when you're ready to write them. ♡";
+      target.style.color = '#c8c8ff';
+      cursor.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
